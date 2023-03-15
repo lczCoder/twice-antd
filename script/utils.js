@@ -6,6 +6,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
+import less from 'rollup-plugin-less';
 import json from '@rollup/plugin-json';
 import babel from '@rollup/plugin-babel';
 import generatePackage from 'rollup-plugin-generate-package-json';
@@ -32,7 +33,8 @@ export const externalConfig = [
 	'classname',
 	'react-is',
 	'**/node_modules/**',
-	'lodash'
+	'lodash',
+	'antd'
 ];
 
 // ES Module打包输出
@@ -50,6 +52,7 @@ export const esmOutput = {
 
 // 通用插件
 export const commonPlugins = [
+	// less(),
 	postcss({
 		plugins: []
 	}),
@@ -66,7 +69,8 @@ export const commonPlugins = [
 			name,
 			description,
 			version,
-			main: 'src/index.js'
+			main: 'src/index.js',
+			typings: 'src/index.d.ts'
 		})
 	})
 ];

@@ -1,4 +1,4 @@
 export interface baseProps {
-	name: string;
-	age: number;
+	text: string;
+	children: React.ReactNode;
 }

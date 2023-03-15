@@ -2,7 +2,6 @@
   "name": "twice-antd",
   "version": "1.0.0",
   "description": "基于ui组件库antd的二次封装",
-  "main": "wandu-es.js",
   "type": "module",
   "scripts": {
     "lint": "eslint --ext .ts,.jsx,.tsx --fix --quiet ./packages",
@@ -31,6 +30,7 @@
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
+    "antd": "^5.3.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
@@ -45,6 +45,7 @@
     "rollup": "^3.19.1",
     "rollup-plugin-dts": "^5.2.0",
     "rollup-plugin-generate-package-json": "^3.2.0",
+    "rollup-plugin-less": "^1.1.3",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
@@ -54,7 +55,6 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "antd": "^5.3.1",
     "prop-types": "^15.8.1"
   }
 }

@@ -3,7 +3,7 @@ import './style.less';
 import { baseProps } from './type';
 
 const Link: React.FC<baseProps> = (props) => {
-	const { name } = props;
-	return <div>{name}</div>;
+	const { text } = props;
+	return <div>{text}</div>;
 };
 export default Link;
