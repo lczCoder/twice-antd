@@ -6,7 +6,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
-import less from 'rollup-plugin-less';
+// import less from 'rollup-plugin-less';
 import json from '@rollup/plugin-json';
 import babel from '@rollup/plugin-babel';
 import generatePackage from 'rollup-plugin-generate-package-json';
@@ -34,14 +34,15 @@ export const externalConfig = [
 	'react-is',
 	'**/node_modules/**',
 	'lodash',
-	'antd'
+	'antd',
+	'prop-types'
 ];
 
 // ES Module打包输出
 export const esmOutput = {
 	preserveModules: true,
-	// preserveModulesRoot: 'src',
-	// exports: 'named',
+	preserveModulesRoot: 'src',
+	exports: 'named',
 	assetFileNames: ({ name }) => {
 		const { ext, dir, base } = path.parse(name);
 		if (ext !== '.css') return '[name].[ext]';

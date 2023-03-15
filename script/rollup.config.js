@@ -26,6 +26,30 @@ export default () => {
 					output: { ...esmOutput, dir: 'dist/type', format: 'es' },
 					external: externalConfig,
 					plugins: [...commonPlugins, dts.default()]
+				},
+				{
+					input: entry,
+					output: {
+						file: 'dist/lib/wandu-umd.js',
+						format: 'umd',
+						name: 'wandu',
+						globals: {
+							react: 'react',
+							reactDom: 'ReactDOM',
+							antd: 'antd'
+						}
+					},
+					external: externalConfig,
+					plugins: [...commonPlugins]
+				},
+				{
+					input: entry,
+					output: {
+						file: `dist/lib/wandu-es.js`,
+						format: 'es'
+					},
+					external: externalConfig,
+					plugins: [...commonPlugins]
 				}
 			];
 	}
