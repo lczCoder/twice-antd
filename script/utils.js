@@ -37,7 +37,8 @@ export const externalConfig = [
 	'**/node_modules/**',
 	'lodash',
 	'antd',
-	'prop-types'
+	'prop-types',
+	'storybook'
 ];
 
 // ES Module打包输出

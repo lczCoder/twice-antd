@@ -4,6 +4,6 @@ import { baseProps } from './type';
 
 const Link: React.FC<baseProps> = (props) => {
 	const { text } = props;
-	return <div>{text}</div>;
+	return <a>{text}</a>;
 };
 export default Link;
