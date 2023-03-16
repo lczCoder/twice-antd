@@ -12,9 +12,11 @@ import babel from '@rollup/plugin-babel';
 import generatePackage from 'rollup-plugin-generate-package-json';
 const isProd = process.env.NODE_ENV === 'production';
 // 入口
-export const entry = path.resolve(__dirname, '../src/index.ts');
-const componentsDir = path.resolve(__dirname, '../src/package');
-const componentsName = fs.readdirSync(path.resolve(componentsDir));
+export const entry = path.resolve(__dirname, '../package/index.ts');
+const componentsDir = path.resolve(__dirname, '../package');
+const componentsName = fs
+	.readdirSync(path.resolve(componentsDir))
+	.filter((item) => !['global.d.ts', 'index.ts'].includes(item));
 export const componentsEntry = componentsName.map(
 	(name) => `${componentsDir}/${name}/index.tsx`
 );
@@ -75,3 +77,5 @@ export const commonPlugins = [
 		})
 	})
 ];
+
+export const zz = [resolve(), commonjs({ sourceMap: !isProd }), typescript()];

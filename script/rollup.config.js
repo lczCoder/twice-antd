@@ -5,7 +5,8 @@ import {
 	componentsEntry,
 	esmOutput,
 	externalConfig,
-	commonPlugins
+	commonPlugins,
+	zz
 } from './utils.js';
 
 // 环境变量
@@ -21,27 +22,27 @@ export default () => {
 					external: externalConfig,
 					plugins: [...commonPlugins]
 				},
-				{
-					input: [entry, ...componentsEntry],
-					output: { ...esmOutput, dir: 'dist/type', format: 'es' },
-					external: externalConfig,
-					plugins: [...commonPlugins, dts.default()]
-				},
-				{
-					input: entry,
-					output: {
-						file: 'dist/lib/wandu-umd.js',
-						format: 'umd',
-						name: 'wandu',
-						globals: {
-							react: 'react',
-							reactDom: 'ReactDOM',
-							antd: 'antd'
-						}
-					},
-					external: externalConfig,
-					plugins: [...commonPlugins]
-				},
+				// {
+				// 	input: [entry, ...componentsEntry],
+				// 	output: { ...esmOutput, dir: 'dist/type', format: 'es' },
+				// 	external: externalConfig,
+				// 	plugins: [...commonPlugins, dts.default()]
+				// },
+				// {
+				// 	input: entry,
+				// 	output: {
+				// 		file: 'dist/lib/wandu-umd.js',
+				// 		format: 'umd',
+				// 		name: 'wandu',
+				// 		globals: {
+				// 			react: 'react',
+				// 			reactDom: 'ReactDOM',
+				// 			antd: 'antd'
+				// 		}
+				// 	},
+				// 	external: externalConfig,
+				// 	plugins: [...commonPlugins]
+				// },
 				{
 					input: entry,
 					output: {
@@ -49,7 +50,7 @@ export default () => {
 						format: 'es'
 					},
 					external: externalConfig,
-					plugins: [...commonPlugins]
+					plugins: [...zz]
 				}
 			];
 	}
