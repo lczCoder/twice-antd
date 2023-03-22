@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import * as path from 'path';
 import * as fs from 'fs';
+// import alias from '@rollup/plugin-alias';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
@@ -16,7 +17,9 @@ export const entry = path.resolve(__dirname, '../package/index.ts');
 const componentsDir = path.resolve(__dirname, '../package');
 const componentsName = fs
 	.readdirSync(path.resolve(componentsDir))
-	.filter((item) => !['global.d.ts', 'index.ts'].includes(item));
+	.filter(
+		(item) => !['global.d.ts', 'index.ts', 'styles', 'types'].includes(item)
+	);
 export const componentsEntry = componentsName.map(
 	(name) => `${componentsDir}/${name}/index.tsx`
 );
@@ -57,6 +60,14 @@ export const esmOutput = {
 // 通用插件
 export const commonPlugins = [
 	// less(),
+	// alias({
+	// 	entries: [
+	// 		{
+	// 			find: '@type',
+	// 			replacement: path.resolve(__dirname, '../package/types')
+	// 		}
+	// 	]
+	// }),
 	postcss({
 		plugins: []
 	}),
@@ -73,8 +84,8 @@ export const commonPlugins = [
 			name,
 			description,
 			version,
-			main: 'src/index.js',
-			typings: 'src/index.d.ts'
+			main: 'package/index.js',
+			typings: 'package/index.d.ts'
 		})
 	})
 ];

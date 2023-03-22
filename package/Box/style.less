@@ -1,0 +1,51 @@
+@import '../styles/themes/qbox.less';
+
+@qfyw-prefix: qfyw;
+
+@qbox-prefix-cls: ~'@{qfyw-prefix}-qbox';
+
+.@{qbox-prefix-cls} {
+    background: @qbox-background;
+    box-shadow: @qbox-shadow;
+    border-radius: @qbox-radius;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 24px 32px 24px;
+    height: 100%;
+
+    .qfyw-qbox-content {
+        display: flex;
+        align-items: center;
+
+        .qfyw-qbox-title {
+            white-space: nowrap;
+            font-weight: @qbox-font-size-title;
+        }
+
+        .qfyw-qbox-row {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 86px;
+        }
+
+        .qfyw-qbox-height {
+            padding-top: 24px;
+            height: auto;
+        }
+
+        .qfyw-qbox-margin {
+            margin: 0 0 0 10px;
+        }
+
+        .qfyw-qbox-col {
+            display: inline-block;
+            font-size: 18px;
+            color: @qbox-color-title;
+            display: flex;
+            align-items: center;
+            font-weight: @qbox-font-size-title;
+        }
+    }
+}

@@ -1,8 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { QLink } from '../../dist/package';
-
+import QLink from '../../dist/package/Modal';
 export default {
 	title: 'Example/Link',
 	component: QLink,
@@ -18,5 +17,6 @@ const Template: ComponentStory<typeof QLink> = (args) => <QLink {...args} />;
 export const Text = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Text.args = {
-	text: 'hello'
+	text: 'hello',
+	visible: false
 };
