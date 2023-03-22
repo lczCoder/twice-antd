@@ -5,11 +5,12 @@
 		"noEmit": true,
 		"emitDeclarationOnly": false,
 		"outDir": "dist",
-		"target": "es5",
+		"target": "es6",
 		"module": "esnext",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"sourceMap": false,
 		"jsx": "react",
+		"noImplicitAny": false,
 		"moduleResolution": "node",
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true,
@@ -25,16 +26,18 @@
 		"isolatedModules": true,
 		"baseUrl": ".",
 		"paths": {
-			// "twice-antd": ["packages/index.ts"],
+			// "@/*": ["packages/*"],
+			// "@type": ["packages/types"],
+			// "twice-antd": ["packages/index.ts"]
 			// "twice-antd/esm/*": ["packages/*"],
 			// "twice-antd/lib/*": ["packages/*"]
 		}
 	},
-	"include": ["src", "global.d.ts"],
+	"include": ["src/*", "package/global.d.tsbal.d.ts", "package"],
 	// 过滤
 	"exclude": [
-		"node_modules"
-		// "dist",
+		"node_modules",
+		"dist"
 		// "packages/**/*.stories.tsx",
 		// "packages/**/*.test.tsx",
 		// "packages/**/__example__"

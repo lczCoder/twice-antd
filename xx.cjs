@@ -3,7 +3,9 @@ const path = require('path');
 const fs = require('fs');
 console.log(path.resolve(__dirname, './package'));
 const componentsDir = path.resolve(__dirname, './package');
-const componentsName = fs.readdirSync(path.resolve(componentsDir));
+const componentsName = fs
+	.readdirSync(path.resolve(componentsDir))
+	.filter((item) => !['global.d.ts', 'index.ts'].includes(item));
 
 console.log('componentsName', componentsName);
 

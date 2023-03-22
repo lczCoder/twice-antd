@@ -5,7 +5,8 @@ import {
 	componentsEntry,
 	esmOutput,
 	externalConfig,
-	commonPlugins
+	commonPlugins,
+	zz
 } from './utils.js';
 
 // 环境变量
